@@ -1,5 +1,29 @@
----
-layout: redirected
-sitemap: false
-redirect_to: "https://notolite.github.io/"
----
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Redirecting ...</title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script>
+
+  var redirect_file_name = 'post.html';
+  var parameter_key = 'post_id';
+
+  var path_name = window.location.pathname;
+
+  var match_condition = new RegExp(redirect_file_name.replace('.html', '') + '/[a-z0-9-_]+$');
+  if (permalink = path_name.match(match_condition))
+  {
+    location.href = path_name.replace(permalink, '') + redirect_file_name + '?' + parameter_key + '=' + permalink[0].replace(/post\//, '');
+  }
+
+</script>
+</head>
+<body>
+  <h1>Redirecting...</h1>
+  <h2>The domain name has been changed into "notolite.github.io". If you have bookmarked this page, please edit the url.</h2>
+</body>
+</html>
